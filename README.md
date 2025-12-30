@@ -2,7 +2,9 @@ Fast Api Tasks
 
 DESCRIPCIÓN
 
-Esta es una aplicación de tareas desarrollada utilizando el framework fastapi, docker, el ORM SQLAlchemy y base de datos PostgreSQL. La aplicación permite realizar todas las operaciones del CRUD, validando la autenticación de los usuarios mediante token con JWT y hasheo de contraseñas.
+Esta es una aplicación de tareas desarrollada utilizando el framework fastapi, docker, el ORM SQLAlchemy y base de datos PostgreSQL. La aplicación permite realizar todas las operaciones del CRUD, validando la autenticación de los usuarios mediante token con JWT y hasheo de contraseñas.La 
+app es susceptible de mejoras tales como el uso de arquitecturas limpias, clases para testing, microservicios, resiliencia, comunicacion asíncrona, entre otros.
+
 
 
 ESTRUCTURA DEL PROYECTO
@@ -44,12 +46,16 @@ ACCESS_TOKEN_EXPIRE_MINUTES=60
 
 EJECUTAR LA APP 
 
-Instalar las dependencias necesarias: pip install -r requirements.txt
-Activar entorno virtual: source venv/bin/activate
-Crear y levantar los servicios de postgresql: docker-compose up -d
-Correr las migraciones: alembic upgrade head
-Levantar la aplicación: uvicorn app.main:app --reload
-abrir la url http://localhost:8000/docs en el navegador
+1 Instalar las dependencias necesarias: pip install -r requirements.txt
+2 Activar entorno virtual: source venv/bin/activate
+3 Crear y levantar los servicios de postgresql: docker-compose up -d
+4 Correr las migraciones: alembic upgrade head
+5 Levantar la aplicación: uvicorn app.main:app --reload
+6 Abrir la url http://localhost:8000/docs en el navegador
+7 Autenticarse mediante el endpoint de login y copiar el token 
+8 agregar el token en postman o swagger
+9 Listar y crear la primera tarea
+
 
 
 
@@ -57,6 +63,11 @@ USUARIO INICIAL
 
 username: admin
 password: admin123
+
+El usuario inicial es insertado mediante un seed que es llamado al iniciar la app por primera vez;
+los seed son ampliamente utilizados en diversos framework y permiten poblar la db en ambiente de desarrollo sin manipular las bases de datos directamente
+
+Las rutas se protegen mediante bearer token.
 
 
 ENDPOINTS:

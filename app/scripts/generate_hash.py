@@ -1,7 +1,7 @@
 from passlib.context import CryptContext
 
 # archivo sólo para pruebas no es parte de la app;
-#  fue generado para obtener un hash de una contraseña 
+#  fue generado para obtener un hash de una contraseña al inicio del desarrollo
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 password = "admin123"
