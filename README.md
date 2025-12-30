@@ -49,16 +49,35 @@ ALGORITHM=HS256
 EJECUTAR LA APP 
 
 1 Instalar las dependencias necesarias: pip install -r requirements.txt
+
 2 Activar entorno virtual: source venv/bin/activate
+
 3 Crear y levantar los servicios de postgresql: docker-compose up -d
+
 4 Correr las migraciones: alembic upgrade head
+
 5 Levantar la aplicación: uvicorn app.main:app --reload
-6 Abrir la url http://localhost:8000/docs en el navegador
+
+6 Abrir la url http://localhost:8000/docs en el navegador o en postman hacer un post request a     http://127.0.0.1:8000/auth/login con un json así:
+
+{
+    "username": "admin",
+    "password": "admin123"
+}
+
 7 Autenticarse mediante el endpoint de login y copiar el token 
+
 8 agregar el token en postman o swagger
-9 Listar y crear la primera tarea
+
+9 Listar y crear la primera tarea  (en postman http://127.0.0.1:8000/tasks GET y POST requests con un json así:
+    {
+    "title": "string",
+    "description": "string"
+    }
+)
 
 
+Ver sección endpoints.
 
 
 USUARIO INICIAL
