@@ -20,6 +20,7 @@ app/
 ├── db/
 │   ├── base.py
 │   ├── session.py
+    ├── seed.py
 │   └── migrations/
 ├── models/
 │   ├── user.py
@@ -42,6 +43,7 @@ DB_PASSWORD=postgres
 
 SECRET_KEY=super-secret-key
 ACCESS_TOKEN_EXPIRE_MINUTES=60
+ALGORITHM=HS256
 
 
 EJECUTAR LA APP 
